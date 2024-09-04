@@ -6,7 +6,30 @@ import joblib
 with open('model_logreg.pkl', 'rb') as file:
     model = joblib.load(file)
 
+# Ajouter le logo en haut de l'application
+st.image("logoispits.png", width=200)  # Ajustez la largeur selon vos besoins
 
+# Ajouter le style CSS pour le fond vert
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #a8d5ba;  /* Couleur de fond vert pâle */
+    }
+    .stButton>button {
+        background-color: #ffffff; /* Couleur de fond du bouton 'Prédire' */
+        color: #000000; /* Couleur du texte du bouton 'Prédire' */
+    }
+    .stTitle>h1 {
+        color: #000000; /* Couleur du titre */
+    }
+    .stSelectbox>div, .stSlider>div {
+        color: #000000; /* Couleur du texte des sélecteurs et curseurs */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Titre de l'application
 st.title("Prédiction de la Qualité du Sommeil")
 
