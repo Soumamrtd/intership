@@ -82,8 +82,8 @@ u13 = {"OUI": 1, "Non": 2}[u13]
 u14 = st.selectbox("Je préfère utiliser mon smartphone que participer à des activités avec d’autres personnes", ["Jamais", "Parfois", "Souvent", "Toujours"])
 u14 = {"Jamais": 1, "Parfois": 2, "Souvent": 3, "Toujours": 4}[u14]
 
-u16 = st.selectbox("Il m’arrive de préférer utiliser mon smartphone que de faire un travail ou un devoir", ["Distraction", "Procrastination", "Absentéisme", "Négligeance"])
-u16 = {"Distraction": 1, "Procrastination": 2, "Absentéisme": 3, "Négligeance": 4}[u16]
+u16 = st.selectbox(". Il m’arrive de préférer utiliser mon smartphone que de faire un travail ou un devoir", ["OUI", "Non"])
+u16 = {"OUI": 1, "Non": 2}[u16]
 
 # Rassembler les variables dans un tableau
 features = np.array([[score_addiction, u3, u4, u5, u7, u8, u11, u12, u13, u14, u16]])
