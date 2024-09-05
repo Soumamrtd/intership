@@ -13,23 +13,24 @@ st.image("logoispits.png", width=200)  # Ajustez la largeur selon vos besoins
 st.markdown(
     """
     <style>
-    .main {
+    .css-1d391kg {
         background-color: #a8d5ba;  /* Couleur de fond vert pâle */
     }
     .stButton>button {
         background-color: #ffffff; /* Couleur de fond du bouton 'Prédire' */
         color: #000000; /* Couleur du texte du bouton 'Prédire' */
     }
-    .stTitle>h1 {
+    h1 {
         color: #000000; /* Couleur du titre */
     }
-    .stSelectbox>div, .stSlider>div {
-        color: #000000; /* Couleur du texte des sélecteurs et curseurs */
+    label {
+        color: #000000; /* Couleur du texte des labels */
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 # Titre de l'application
 st.title("Prédiction de la Qualité du Sommeil")
 
@@ -54,21 +55,17 @@ st.write(f"Score d'addiction calculé : {score_addiction}")
 u3 = st.selectbox("Accès à internet sur le smartphone", ["Jamais", "Parfois", "Souvent", "Toujours"])
 u3 = {"Jamais": 1, "Parfois": 2, "Souvent": 3, "Toujours": 4}[u3]
 
-
 u4 = st.selectbox("Utilisation du smartphone les jours d'école", ["Moins d'une heure par jour", "Entre 1 et 4 heures par jour", "Plus de 4 heures"])
 u4 = {"Moins d'une heure par jour": 1, "Entre 1 et 4 heures par jour": 2, "Plus de 4 heures": 3}[u4]
 
 u5 = st.selectbox("Utilisation du smartphone pendant les vacances", ["Moins d'une heure", "Entre 1 et 4 heures par jour", "Plus de 4 heures"])
 u5 = {"Moins d'une heure": 1, "Entre 1 et 4 heures par jour": 2, "Plus de 4 heures": 3}[u5]
 
-
 u7 = st.selectbox("Consultation du smartphone au réveil", ["Dès que j’ouvre les yeux", "Dans les 15 minutes après mon réveil", "15 à 30 min après mon réveil", "Plus de 30 min après mon réveil"])
 u7 = {"Dès que j’ouvre les yeux": 1, "Dans les 15 minutes après mon réveil": 2, "15 à 30 min après mon réveil": 3, "Plus de 30 min après mon réveil": 4}[u7]
 
-
 u8 = st.selectbox("Pose du smartphone le soir", ["Je m’endors en l’utilisant", "Moins d’une heure avant d’aller me coucher", "Plus d’une heure avant de me coucher"])
 u8 = {"Je m’endors en l’utilisant": 1, "Moins d’une heure avant d’aller me coucher": 2, "Plus d’une heure avant de me coucher": 3}[u8]
-
 
 u11 = st.selectbox(" Il m’arrive d’avoir des difficultés à me concentrer parce que j’utilise mon smartphone", ["OUI", "Non"])
 u11 = {"OUI": 1, "Non": 2}[u11]
@@ -82,9 +79,8 @@ u13 = {"OUI": 1, "Non": 2}[u13]
 u14 = st.selectbox("Je préfère utiliser mon smartphone que participer à des activités avec d’autres personnes", ["Jamais", "Parfois", "Souvent", "Toujours"])
 u14 = {"Jamais": 1, "Parfois": 2, "Souvent": 3, "Toujours": 4}[u14]
 
-u16 = st.selectbox(". Il m’arrive de préférer utiliser mon smartphone que de faire un travail ou un devoir", ["OUI", "Non"])
-u16 = {"OUI": 1, "Non": 2}[u16]
-
+u16 = st.selectbox("Il m’arrive de préférer utiliser mon smartphone que de faire un travail ou un devoir", ["Distraction", "Procrastination", "Absentéisme", "Négligeance"])
+u16 = {"Distraction": 1, "Procrastination": 2, "Absentéisme": 3, "Négligeance": 4}[u16]
 
 # Rassembler les variables dans un tableau
 features = np.array([[score_addiction, u3, u4, u5, u7, u8, u11, u12, u13, u14, u16]])
