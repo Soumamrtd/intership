@@ -3,9 +3,12 @@ import numpy as np
 import joblib
 
 # Charger le modèle dans Streamlit
-with open('model_logreg.pkl', 'rb') as file:
-    model = joblib.load(file)
-st.write("Modèle chargé avec succès !")
+try:
+    with open('model_logreg.pkl', 'rb') as file:
+        model = joblib.load(file)
+    st.write("Modèle chargé avec succès !")
+except Exception as e:
+    st.write(f"Erreur lors du chargement du modèle : {e}")
 # Ajouter le logo en haut de l'application
 st.image("logoispits.png", width=200)  # Ajustez la largeur selon vos besoins
 
