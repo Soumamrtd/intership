@@ -82,7 +82,7 @@ u13 = {"OUI": 1, "Non": 2}[u13]
 u14 = st.selectbox("Je préfère utiliser mon smartphone que participer à des activités avec d’autres personnes", ["Jamais", "Parfois", "Souvent", "Toujours"])
 u14 = {"Jamais": 1, "Parfois": 2, "Souvent": 3, "Toujours": 4}[u14]
 
-u16 = st.selectbox(". Il m’arrive de préférer utiliser mon smartphone que de faire un travail ou un devoir", ["OUI", "Non"])
+u16 = st.radio("Il m’arrive de préférer utiliser mon smartphone que de faire un travail ou un devoir", ["OUI", "Non"])
 u16 = {"OUI": 1, "Non": 2}[u16]
 
 # Rassembler les variables dans un tableau
