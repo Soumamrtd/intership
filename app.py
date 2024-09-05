@@ -5,7 +5,7 @@ import joblib
 # Charger le modèle dans Streamlit
 with open('model_logreg.pkl', 'rb') as file:
     model = joblib.load(file)
-
+st.write("Modèle chargé avec succès !")
 # Ajouter le logo en haut de l'application
 st.image("logoispits.png", width=200)  # Ajustez la largeur selon vos besoins
 
